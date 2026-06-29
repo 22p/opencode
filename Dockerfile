@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     python3 \
     python3-pip \
+    cmake \
+    ripgrep \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
@@ -42,3 +44,6 @@ RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg \
     && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g opencode-ai@latest
+
+EXPOSE 4096
+ENTRYPOINT ["opencode", "web", "--hostname", "0.0.0.0", "--port", "4096"]
