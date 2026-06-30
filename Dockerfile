@@ -1,20 +1,25 @@
 FROM debian:latest
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ca-certificates \
-    curl \
-    wget \
-    git \
-    jq \
-    vim \
-    nano \
-    unzip \
-    xz-utils \
     build-essential \
+    ca-certificates \
+    cmake \
+    curl \
+    file \
+    git \
+    git-lfs \
+    jq \
+    less \
+    nano \
+    openssh-client \
+    procps \
     python3 \
     python3-pip \
-    cmake \
     ripgrep \
+    unzip \
+    vim \
+    wget \
+    xz-utils \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
