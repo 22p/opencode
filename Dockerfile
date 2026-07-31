@@ -17,6 +17,7 @@ RUN dnf install -y --nodocs --setopt=install_weak_deps=false \
         nano \
         nodejs \
         npm \
+        podman-remote \
         procps-ng \
         python3 \
         python3-pip \
