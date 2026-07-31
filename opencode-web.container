@@ -1,0 +1,22 @@
+[Unit]
+Description=OpenCode AI coding agent (Web)
+After=network-online.target podman.socket
+Wants=network-online.target
+Requires=podman.socket
+
+[Container]
+Image=ghcr.io/22p/opencode:latest
+ContainerName=opencode-web
+AutoUpdate=registry
+PublishPort=127.0.0.1:4096:4096
+Volume=opencode:/root
+
+SecurityLabelDisable=true
+Volume=%t/podman/podman.sock:/run/podman/podman.sock
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=default.target
