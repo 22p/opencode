@@ -1,8 +1,8 @@
 FROM registry.fedoraproject.org/fedora:latest
 
 RUN dnf install -y --nodocs --setopt=install_weak_deps=false \
-        cargo \
         cmake \
+        diffutils \
         file \
         gcc \
         gcc-c++ \
@@ -10,25 +10,23 @@ RUN dnf install -y --nodocs --setopt=install_weak_deps=false \
         git \
         git-lfs \
         golang \
-        gzip \
+        gopls \
         jq \
         less \
         make \
         nano \
         nodejs \
         npm \
+        patch \
         podman-remote \
         procps-ng \
         python3 \
         python3-pip \
-        rust-analyzer \
         ripgrep \
-        tar \
         tini \
         unzip \
         vim-enhanced \
         wget \
-        xz \
         yq \
     && dnf clean all
 
