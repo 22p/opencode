@@ -1,3 +1,4 @@
+# ~/.config/containers/systemd/opencode-web.container
 [Unit]
 Description=OpenCode AI coding agent (Web)
 After=network-online.target podman.socket
@@ -8,6 +9,7 @@ Requires=podman.socket
 Image=ghcr.io/22p/opencode:latest
 ContainerName=opencode-web
 AutoUpdate=registry
+Environment=TZ=Asia/Shanghai
 PublishPort=127.0.0.1:4096:4096
 Volume=opencode:/root
 

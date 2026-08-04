@@ -32,6 +32,8 @@ RUN dnf install -y --nodocs --setopt=install_weak_deps=false \
 
 RUN npm install -g opencode-ai@latest
 
+ENV OPENCODE_DISABLE_AUTOUPDATE=true
+
 EXPOSE 4096
 ENTRYPOINT ["tini", "--"]
 CMD ["opencode", "web", "--hostname", "0.0.0.0", "--port", "4096"]
